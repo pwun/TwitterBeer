@@ -1,0 +1,21 @@
+﻿Twitter-Search:
+
+
+1.Themenvorstellung
+	Was ist Twitter (Features wie Hashtag,@-Zeichen etc., Ranking der eigenen Suche, Welche Suchmöglichkeiten gibt es etc...)
+	
+Search Tasks und Informationsbedürfnisse  speziell auf Twitter/Microblogging (Teevan vgl. 	TwitterSearch zu Websearch))
+ Naaman et al. Is it really about me?
+
+2. Datengrundlage 
+	Twitter4JApi  (http://twitter4j.org/en/index.html)
+	Streaming vs. Firehose  (kann kurz angesprochen werden, was der Unterschied ist) 
+
+3. Exploratory Tweet Search Engine
+	Was war nochmal Exploratory Search?  
+	Wesentliche Punkte und welche Features sollte eine Exploratory 		Search Engine haben ?
+	Vorstellung ähnlicher Projekte (Paper zu Projekten die exploratory Tweet Search Engines implementieren) 
+	
+4. EIGENE IDEE ?!(Gruppe A Bürgerfest?!) 
+
+vll eine Menge an Tweets mit Geo-Location zu einem Thema (Map Visualisierung)
