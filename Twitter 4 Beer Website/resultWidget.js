@@ -1,6 +1,6 @@
 (function ($) {
 AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
-    
+
     /*
     facetLinks: function (facet_field, facet_values) {
       var links = [];
@@ -41,22 +41,22 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
 
   template: function (doc) {
   var snippet = '';
-  if (doc.text.length > 300) {
-    snippet += doc.dateline + ' ' + doc.text.substring(0, 100);
-    snippet += '<span style="display:none;">' + doc.text.substring(100);
+  if (doc.tweetText.length > 300) {
+    snippet += doc.dateline + ' ' + doc.tweetText.substring(0, 100);
+    snippet += '<span style="display:none;">' + doc.tweetText.substring(100);
     snippet += '</span> <a href="#" class="more">more</a>';
   }
   else {
-    snippet += doc.dateline + ' ' + doc.text;
+    snippet += doc.dateline + ' ' + doc.tweetText;
   }
 
-  var output = '<div><h2>' + doc.title + '</h2>';
+  var output = '<div><h2>' + doc.screenName + '</h2>';
   output += '<p id="links_' + doc.id + '" class="links"></p>';
   output += '<p>' + snippet + '</p></div>';
   return output;
 },
-  
-  
+
+
   init: function () {
   $(document).on('click', 'a.more', function () {
     var $this = $(this),
@@ -64,18 +64,17 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
 
     if (span.is(':visible')) {
       span.hide();
-      $this.text('more');
+      $this.tweetText('more');
     }
     else {
       span.show();
-      $this.text('less');
+      $this.tweetText('less');
     }
 
     return false;
   });
-} 
+}
 
-  
+
 });
 })(jQuery);
-
