@@ -6,7 +6,7 @@ var Manager;
     Manager = new AjaxSolr.Manager({
       solrUrl: 'http://reuters-demo.tree.ewdev.ca:9090/reuters/'
       //This was the URL from the Solr server running on my Desktop 
-      //solrUrl: 'http://132.199.138.95:8983/solr/collection1/'
+      //solrUrl: 'http://evolvingweb.ca/solr/reuters/'
     });
 
    	Manager.addWidget(new AjaxSolr.ResultWidget({
@@ -27,8 +27,8 @@ var Manager;
     innerWindow:1,
     renderHeader: function(perPage,offset,total){
     $('#pager-header').html($('<span></span>')
-        .text('displaying' + Math.min(total,offset+1)+'to '+
-        Math.min(total,offset+perPage)+' of' + total));
+        .text('displaying ' + Math.min(total,offset+1)+' to '+
+        Math.min(total,offset+perPage)+' of ' + total));
     }    
     }));  
     
