@@ -84,13 +84,21 @@ a:hover {
 }
 .right h2 {
   padding: 15px 0 5px 0;
-  color: #B4241B;
+  color: deepskyblue;
   font-size: 20px;
   font-weight: 100;
   letter-spacing: -2px;
 }
 #result a {
   margin-right: 5px;
+}
+#tweet{  
+    background-color: bisque;
+    border: 2px solid black;
+}
+
+#tweet_followerCount{
+    font-size: 50%;
 }
 #navigation {
   border-bottom: 1px solid #000;

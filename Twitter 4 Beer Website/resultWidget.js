@@ -42,23 +42,23 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   template: function (doc) {
   var snippet = '';
   if (doc.tweetText.length > 300) {
-    snippet += doc.dateline + ' ' + doc.tweetText.substring(0, 100);
+    snippet += doc.createdAt + ' ' + doc.tweetText.substring(0, 100);
     snippet += '<span style="display:none;">' + doc.tweetText.substring(100);
     snippet += '</span> <a href="#" class="more">more</a>';
   }
   else {
-    snippet += doc.dateline + ' ' + doc.tweetText;
-  }
+    snippet += doc.createdAt + ': ' + doc.tweetText;
+ }
 
-  var output = '<div><h2>' + doc.screenName + '</h2>';
-  output += '<p id="links_' + doc.id + '" class="links"></p>';
-  output += '<p>' + snippet + '</p></div>';
+  var output = '<div id="tweet"><h2>' + doc.screenName  +'</h2><div id="tweet_followerCount">'+ doc.followerCount+'</div>';
+ /* output += '<p id="links_' + doc.id + '" class="links"></p>';*/
+  output += '<p>' + snippet + '</p><p>'+ doc.tweetRetweetedCount+'</p></div>';
   return output;
 },
 
 
   init: function () {
-  $(document).on('click', 'a.more', function () {
+ $(document).on('click', 'a.more', function () {
     var $this = $(this),
         span = $this.parent().find('span');
 
