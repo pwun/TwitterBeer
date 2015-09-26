@@ -4,7 +4,7 @@
 }
 
 html{
-  background-color: white;
+  background-color: rgb(242, 242, 242);
 
 }
 
@@ -28,6 +28,14 @@ a {
 a:hover {
   color: #000;
   text-decoration: underline;
+}
+
+.current{
+  color: rgb(27, 178, 233);
+}
+
+.options{
+  padding-left: 10px;
 }
 
 .clear {
@@ -171,6 +179,11 @@ a:hover{
   background-color: rgb(242, 242, 242);
   border-right: 3px solid rgb(27, 178, 233);
   float: left;
+}
+
+#navLeft p {
+  padding-top: 5px;
+  padding-left: 5px;
 }
 
 #backgroundImage{

@@ -8,6 +8,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
   <script src="lib/core/Core.js"></script>
+<!--  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
   <script src="lib/core/AbstractManager.js"></script>
   <script src="lib/managers/Manager.jquery.js"></script>
   <script src="lib/core/Parameter.js"></script>
@@ -38,7 +39,30 @@
 
     <div id= "content">
       <div id= "navLeft">
-        Test
+          <p>Sortiert nach:
+            <ul class="options">
+              <li><a href="" class="current"> Top Treffer</a></li>
+              <li><a href=""> Retweets</a></li>
+              <li><a href=""> Datum</a></li>
+            </ul>
+          </p>
+          <div id="filter">
+            <p>Verfeinere deine Suche um bessere Ergebnisse zu erhalten:</p>
+            <p>Themen:
+              <ul class="options" id="hashtagSelection">
+                <li><a href="">#beispiel</a></li>
+                <li><a href="">#beispiel2</a></li>
+                <li><a href="">#beispiel3</a></li>
+              </ul>
+            </p>
+            <p>Personen:
+              <ul class="options" id="atSelection">
+                <li><a href="">@beispiel</a></li>
+                <li><a href="">@beispiel2</a></li>
+                <li><a href="">@beispiel3</a></li>
+              </ul>
+            </p>
+          </div>
       </div>
 
       <div id="result">
