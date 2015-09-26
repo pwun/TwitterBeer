@@ -113,14 +113,16 @@ function urlify(text) {
 function atify(text){
   var atRegex = /(@[^\s]+)/g;
   return text.replace(atRegex, function(url) {
-      return '<a href="' + "http://www.twitter.com/" + url.replace(/:$/, "") + '" target="blank">' + url + '</a>'; //url.replace(/\W/, "")
+    urlCopy = url;
+      return '<a href="http://www.twitter.com/' + urlCopy.replace(/:$/, "") + '" target="blank">' + url + '</a>'; //url.replace(/\W/, "")
   })
 }
 
 function hashtagify(text){
   var hashtagRegex = /(#[^\s]+)/g;
   return text.replace(hashtagRegex, function(url) {
-      return '<a href="' + "http://www.twitter.com/" + url.replace(/:$/, "") + '" target="blank">' + url + '</a>';
+    urlCopy = url;
+      return '<a href="http://www.twitter.com/' + urlCopy.replace(/:$/, "") + '" target="blank">' + url + '</a>';
   })
 }
 //Links END

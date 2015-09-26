@@ -10,7 +10,7 @@
   <script src="lib/core/Core.js"></script>
   <script src="lib/core/AbstractManager.js"></script>
   <script src="lib/managers/Manager.jquery.js"></script>
-  <script src="lib/core/Parameter.js"></script> 
+  <script src="lib/core/Parameter.js"></script>
   <script src="lib/core/ParameterStore.js"></script>
   <script src="lib/core/AbstractWidget.js"></script>
   <script src="lib/core/AbstractTextWidget.js"></script>
@@ -20,39 +20,39 @@
   <script src="textWidget.js"></script>
   <script src="tagCloudWidget.js"></script>
   <script src="solr.js"></script>
-    
+
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css">
 </head>
 <body>
 
     <div id="header">
-      <div id="headerText"><h1>TWITTER 4 BEER</h1>
+      <img id="banner" src="images/un-problema-llamado-twitter-banner.jpg"/>
+      <div id="headerText"><h1><a href= "startpage.html">TWITTER 4 BEER</a></h1>
         <h2>A Search Engine that connects.</h2></div>
         <div id="searchbox">
-            <ul id="search">
-        <input id="query" name="query" autocomplete="off" type="text" placeholder="Suche..." >
-      </ul>
+          <ul id="search">
+            <input id="query" name="query" autocomplete="off" type="text" placeholder="Suche..." >
+          </ul>
         </div>
     </div>
 
-     
-<div id="wrap">
-    <div class="left">
-        
+    <div id= "content">
+      <div id= "navLeft">
+        Test
+      </div>
 
-
-      <h2>Top Topics</h2>
-      <div class="tagcloud" id="topics"></div>
-
-  </div>
-
-    <div class="right">
       <div id="result">
+        <img src="images/hintergrund.jpg" id="backgroundImage"/>
+        <div id="docs">
+        </div>
         <div id="navigation">
           <ul id="pager"></ul>
           <div id="pager-header"></div>
         </div>
-        <div id="docs"></div>
+      </div>
+
+      <div id= "navRight">
+        Test
       </div>
     </div>
 
