@@ -6,6 +6,7 @@
 		    if (e.which == 13) {
 		      var value = $(this).val();
 		      if (value && self.set(value)) {
+						localStorage["input"] = value;
 		        self.doRequest();
 		      }
 		    }
@@ -16,5 +17,3 @@
 	//	},
 	});
 })(jQuery);
-
-

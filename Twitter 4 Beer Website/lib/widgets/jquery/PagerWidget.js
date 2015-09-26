@@ -41,8 +41,8 @@ AjaxSolr.PagerWidget = AjaxSolr.AbstractWidget.extend(
     AjaxSolr.extend(this, {
       innerWindow: 4,
       outerWindow: 1,
-      prevLabel: '&laquo; Previous',
-      nextLabel: 'Next &raquo;',
+      prevLabel: '&lt;',
+      nextLabel: '&gt;',
       separator: ' ',
       // The current page number.
       currentPage: null,

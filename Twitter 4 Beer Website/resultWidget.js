@@ -45,14 +45,14 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   doc.tweetText = atify(""+doc.tweetText);
   doc.tweetText = hashtagify(""+doc.tweetText);
   formatDate(doc);
-  if (doc.tweetText.length > 300) {
+  /*if (doc.tweetText.length > 300) {
     snippet += doc.createdAt + ' ' + doc.tweetText.substring(0, 100);
     snippet += '<span style="display:none;">' + doc.tweetText.substring(100);
     snippet += '</span> <a href="#" class="more">more</a>';
   }
-  else {
-    snippet += doc.createdAt + '<br>' + doc.tweetText;
-  }
+  else {*/
+    snippet += '<div id="tweet_date">' + doc.createdAt+'</div>' + '<br>' + '<div id= "tweet_text">' + doc.tweetText + '</div>';
+  //}
   var output = '<div id="tweet"><h2>' + '<a href="http://www.twitter.com/@' + doc.screenName + '" target="blank">' + doc.screenName + '</a></h2>';
   output += '<p id="links_' + doc.id + '" class="links"></p>';
   output += '<p>' + snippet + '</p></div>';

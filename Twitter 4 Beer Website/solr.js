@@ -39,10 +39,10 @@ var Manager;
 document.getElementById("query").value = localStorage["input"];
       console.log(localStorage["input"]);
       if(localStorage["input"]==""){
-          Manager.store.addByValue('q',                               '*:*');
+          Manager.store.addByValue('q', '*:*');
       }
       else{
-          Manager.store.addByValue('q',                               ""+localStorage["input"]);
+          Manager.store.addByValue('q', ""+localStorage["input"]);
       }
 
       Manager.doRequest();
