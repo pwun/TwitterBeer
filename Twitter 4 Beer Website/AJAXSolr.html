@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <title>Twitter 4 Beer</title>
   <link rel="stylesheet" href="css/reuters.css">
-    <link rel="stylesheet" href="css/style.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
   <script src="lib/core/Core.js"></script>
@@ -21,22 +20,25 @@
   <script src="textWidget.js"></script>
   <script src="tagCloudWidget.js"></script>
   <script src="solr.js"></script>
+    
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css">
 </head>
 <body>
 
     <div id="header">
-      <h1>TWITTER 4 BEER</h1>
-        <h2>A Search Engine that connects.</h2>
-    </div>
-
-     <div id="wrap">
-
-    <div class="left">
-
-      <ul id="search">
+      <div id="headerText"><h1>TWITTER 4 BEER</h1>
+        <h2>A Search Engine that connects.</h2></div>
+        <div id="searchbox">
+            <ul id="search">
         <input id="query" name="query" autocomplete="off" type="text" placeholder="Suche..." >
       </ul>
+        </div>
+    </div>
+
+     
+<div id="wrap">
+    <div class="left">
+        
 
 
       <h2>Top Topics</h2>

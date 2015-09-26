@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+html{
+    background-image: url(http://ledertaschenblog.de/wp-content/uploads/2015/07/1903.jpg);
+    background-attachment: fixed;   
+}
 body {
   
   color: #333;
@@ -21,18 +25,9 @@ a:hover {
   color: #000;
   text-decoration: underline;
 }
-#searchbutton{
-    width: 200px;
-    height: 30px;
-    margin-left: 400px;
-    margin-top: 20px;
-    
-}
-
 #wrap {
-  width: 1000px;
+  width: 1200px;
   margin: 0px auto;
-  
 }
 .clear {
   clear: both;
@@ -42,16 +37,18 @@ a:hover {
 
 #header {
   height: 120px;
+  width: 100%;
   background-color: deepskyblue;
   opacity: 0.7;
+  position: fixed;
   
 }
 #header h1 { 
   padding-top: 40px;
   color: black;
-  font-size: 48px;
+  font-size: 20px;
   letter-spacing: -2px;
-  text-align: center;
+  /*text-align: center;*/
   font-family: Verdana;
   letter-spacing: 8px;
   font-weight: lighter;
@@ -62,16 +59,14 @@ a:hover {
   color: #000;
   font-size: 14px;
   font-weight: 100;
-  text-align: center;
+  /*text-align: center;*/
    
 }
-.button{
- margin-left: 400px;
- margin-top: 20px;
- height: 30px;
- width: 200px;
-    
+
+#headerText{
+    float: left;
 }
+
 /* right */
 
 .right {
@@ -80,6 +75,9 @@ a:hover {
   padding: 10px 20px 10px 40px;
   border-left: 1px solid #aaa;
   text-align: justify;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin: 50px;
   
 }
 .right h2 {
@@ -92,13 +90,42 @@ a:hover {
 #result a {
   margin-right: 5px;
 }
-#tweet{  
-    background-color: bisque;
-    border: 2px solid black;
-}
 
+#tweet{  
+    background-color: white;
+    opacity: 0.8;
+    border: 2px solid black;
+    margin: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    font-family: Helvetica;
+    font-weight: 100;
+    z-index: 8;
+}
+#tweet h2{
+    font-family: Helvetica;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: deepskyblue;
+}
+#tweet_date{
+    font-weight: 600;
+}
+#tweet_followerCount p,
 #tweet_followerCount{
-    font-size: 50%;
+    font-size: 14px;
+    display: inline;
+    color: brown;
+}
+#tweet_retweetCount p,
+#tweet_retweetCount{
+    font-size: 14px;
+    display: inline;
+    color:brown;
+}
+#snippet{
+    font-size: 18px;
 }
 #navigation {
   border-bottom: 1px solid #000;
@@ -106,11 +133,18 @@ a:hover {
 #pager,
 #pager-header {
   display: inline;
+  color:black;
+  font-size: 16px;
+  font-family: Verdana;
+  position:static;
+  z-index: 8;
+    margin-bottom: 20px;
 }
 #pager li,
 .links li {
   list-style-type: none;
   display: inline;
+    text-decoration:none;
 }
 #selection {
   padding: 10px 15px 0;
@@ -136,11 +170,15 @@ a:hover {
   
 }
 #search input {
-  width: 550px;
-  height: 24px;
-  margin-left: 225px;
-  margin-right: auto;
-  margin-top: 50px;
+ width: 50%;
+   margin-left: 5%;
+    /*margin-right: 25%;*/
+    margin-top: 3%;
+    height: 38px;
+    font-size: 20px;
+    padding-left: 8px;
+    font-family: Helvetica;
+    
   
 }
 #calendar {

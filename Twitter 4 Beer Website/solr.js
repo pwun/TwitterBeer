@@ -1,5 +1,6 @@
 var Manager;
 (function ($) {
+    
   $(function () {
     Manager = new AjaxSolr.Manager({
       //solrUrl: 'http://evolvingweb.ca/solr/reuters/'
@@ -7,11 +8,15 @@ var Manager;
     });
       
       Manager.addWidget(new AjaxSolr.ResultWidget({
-  id: 'result',
-  target: '#docs'
-}));
+          id: 'result',
+          target: '#docs'
+      }));
     
-      
+     Manager.addWidget(new AjaxSolr.TextWidget({
+         id:'text',
+         target:'#search'
+         
+     })); 
       Manager.addWidget(new AjaxSolr.PagerWidget({
     id: 'pager',
     target:'#pager',
@@ -27,8 +32,15 @@ var Manager;
       
       
     Manager.init();
-      
-      Manager.store.addByValue('q', '*:*');
+              console.log(""+localStorage["input"]);
+document.getElementById("query").value = localStorage["input"];
+      console.log(localStorage["input"]);
+      if(localStorage["input"]==""){
+          Manager.store.addByValue('q',                               '*:*');
+      }
+      else{
+          Manager.store.addByValue('q',                               ""+localStorage["input"]);
+      }
       
       Manager.doRequest();
       

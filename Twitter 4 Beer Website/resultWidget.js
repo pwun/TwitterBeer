@@ -41,18 +41,21 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
 
   template: function (doc) {
   var snippet = '';
+  doc.tweetText = urlify(""+doc.tweetText);
+  doc.tweetText = atify(""+doc.tweetText);
+  doc.tweetText = hashtagify(""+doc.tweetText);
+  formatDate(doc);
   if (doc.tweetText.length > 300) {
     snippet += doc.createdAt + ' ' + doc.tweetText.substring(0, 100);
     snippet += '<span style="display:none;">' + doc.tweetText.substring(100);
     snippet += '</span> <a href="#" class="more">more</a>';
   }
   else {
-    snippet += doc.createdAt + ': ' + doc.tweetText;
- }
-
-  var output = '<div id="tweet"><h2>' + doc.screenName  +'</h2><div id="tweet_followerCount">'+ doc.followerCount+'</div>';
- /* output += '<p id="links_' + doc.id + '" class="links"></p>';*/
-  output += '<p>' + snippet + '</p><p>'+ doc.tweetRetweetedCount+'</p></div>';
+    snippet += doc.createdAt + '<br>' + doc.tweetText;
+  }
+  var output = '<div id="tweet"><h2>' + '<a href="http://www.twitter.com/@' + doc.screenName + '" target="blank">' + doc.screenName + '</a></h2>';
+  output += '<p id="links_' + doc.id + '" class="links"></p>';
+  output += '<p>' + snippet + '</p></div>';
   return output;
 },
 
@@ -78,3 +81,46 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
 
 });
 })(jQuery);
+
+
+function formatDate(doc){
+  //Fri Sep 25 10:25:43 CEST 2015
+  newDate = ("" + doc.createdAt).charAt(0) +
+    ("" + doc.createdAt).charAt(1) +
+    (""+doc.createdAt).charAt(2) + ', ' +
+    (""+doc.createdAt).charAt(8) +
+    (""+doc.createdAt).charAt(9) + '.' +
+    (""+doc.createdAt).charAt(4) +
+    (""+doc.createdAt).charAt(5) +
+    (""+doc.createdAt).charAt(6) + ' '+
+    (""+doc.createdAt).charAt(11) +
+    (""+doc.createdAt).charAt(12) + ':' +
+    (""+doc.createdAt).charAt(14) +
+    (""+doc.createdAt).charAt(15) + ':' +
+    (""+doc.createdAt).charAt(17) +
+    (""+doc.createdAt).charAt(18);
+  doc.createdAt = "" + newDate;
+}
+
+//Links to Websites, @Persons and #Hashtags
+function urlify(text) {
+  var urlRegex = /(https?:\/\/[^\s]+)/g;
+  return text.replace(urlRegex, function(url) {
+      return '<a href="' + url + '" target="blank">' + url + '</a>';
+  })
+}
+
+function atify(text){
+  var atRegex = /(@[^\s]+)/g;
+  return text.replace(atRegex, function(url) {
+      return '<a href="' + "http://www.twitter.com/" + url.replace(/:$/, "") + '" target="blank">' + url + '</a>'; //url.replace(/\W/, "")
+  })
+}
+
+function hashtagify(text){
+  var hashtagRegex = /(#[^\s]+)/g;
+  return text.replace(hashtagRegex, function(url) {
+      return '<a href="' + "http://www.twitter.com/" + url.replace(/:$/, "") + '" target="blank">' + url + '</a>';
+  })
+}
+//Links END
