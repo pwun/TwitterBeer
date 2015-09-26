@@ -21,6 +21,7 @@
   <script src="textWidget.js"></script>
   <script src="tagCloudWidget.js"></script>
   <script src="solr.js"></script>
+  <script src="tags.js"></script>
 
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css">
 </head>
@@ -28,7 +29,7 @@
 
     <div id="header">
       <img id="banner" src="images/un-problema-llamado-twitter-banner.jpg"/>
-      <div id="headerText"><h1><a href= "startpage.html">TWITTER 4 BEER</a></h1>
+      <div id="headerText"><h1><a href= "startpage.html" onclick="clearLS();">TWITTER 4 BEER</a></h1>
         <h2>A Search Engine that connects.</h2></div>
         <div id="searchbox">
           <ul id="search">
@@ -54,16 +55,16 @@
             <p>Verfeinere deine Suche um bessere Ergebnisse zu erhalten:</p>
             <p>Themen:
               <ul class="options" id="hashtagSelection">
-                <li><a href="">#beispiel</a></li>
-                <li><a href="">#beispiel2</a></li>
-                <li><a href="">#beispiel3</a></li>
+                <li><a href="#" onclick="AddInput(' #beispiel');">#beispiel</a></li>
+                <li><a href="#" onclick="AddInput(' #beispiel2');">#beispiel2</a></li>
+                <li><a href="#" onclick="AddInput(' #beispiel3');">#beispiel3</a></li>
               </ul>
             </p>
             <p>Personen:
               <ul class="options" id="atSelection">
-                <li><a href="">@beispiel</a></li>
-                <li><a href="">@beispiel2</a></li>
-                <li><a href="">@beispiel3</a></li>
+                <li><a href="#" onclick="AddInput(' @beispiel');">@beispiel</a></li>
+                <li><a href="#" onclick="AddInput(' @beispiel2');">@beispiel2</a></li>
+                <li><a href="#" onclick="AddInput(' @beispiel3');">@beispiel3</a></li>
               </ul>
             </p>
           </div>

@@ -49,3 +49,7 @@ document.getElementById("query").value = localStorage["input"];
 
   });
 })(jQuery);
+
+function clearLS(){
+  localStorage["input"] = "";
+}

@@ -41,6 +41,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
 
   template: function (doc) {
   var snippet = '';
+  console.log("Create new Template");
   doc.tweetText = urlify(""+doc.tweetText);
   doc.tweetText = atify(""+doc.tweetText);
   doc.tweetText = hashtagify(""+doc.tweetText);
@@ -114,6 +115,7 @@ function atify(text){
   var atRegex = /(@[^\s]+)/g;
   return text.replace(atRegex, function(url) {
     urlCopy = url;
+    createTag(url);
       return '<a href="http://www.twitter.com/' + urlCopy.replace(/:$/, "") + '" target="blank">' + url + '</a>'; //url.replace(/\W/, "")
   })
 }
@@ -122,6 +124,7 @@ function hashtagify(text){
   var hashtagRegex = /(#[^\s]+)/g;
   return text.replace(hashtagRegex, function(url) {
     urlCopy = url;
+    createTag(url);
       return '<a href="http://www.twitter.com/' + urlCopy.replace(/:$/, "") + '" target="blank">' + url + '</a>';
   })
 }
