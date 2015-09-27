@@ -43,6 +43,68 @@ a:hover {
 }
 
 /* header */
+#menu {
+  font-size:12px;
+  position:absolute; 
+    z-index: 1000;
+    margin-left: 74.5%;
+    margin-top: 1.5%;
+    text-decoration: none;
+}
+
+#menu ul {
+  list-style-type:none;
+  list-style-image:none;
+  margin:0px;
+  padding:0px;
+}
+
+#menu li.topmenu {
+  float:left;
+}
+
+.topmenu a {
+  float:left;
+  background-color:black;
+  color: white;
+}
+.topmenu ul{
+  display:none;
+}
+
+.topmenu a, .submenu a{
+  padding:1px 5px;
+  border:1px solid black;
+  border-radius: 7px;
+  border-collapse:inherit;
+  /*color:rgb(27, 178, 233);*/
+  font-weight:bold;
+  text-decoration:none;
+  margin:0; 
+  width: 90px;
+  height: 15px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  font-family: Helvetica;
+}
+
+.submenu a{
+  font-size:12px;
+  position:relative;
+  clear:both; /* special IE6 */
+  background-color: silver;
+}
+
+#menu a:hover, .topmenu.on a {
+  color:#4C4C4C;
+  background-color:rgb(255,210,0) !important;
+}
+
+.topmenu:hover ul {
+  display:inline;  
+  z-index:500;
+}
 
 #banner{
   margin-top: 10px;
