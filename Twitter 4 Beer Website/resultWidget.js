@@ -37,6 +37,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
       }
       */
     }
+    //checkEmptySelection();
   },
 
   template: function (doc) {
@@ -54,7 +55,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   else {*/
     snippet += '<div id="tweet_date">' + doc.createdAt+'</div>' + '<br>' + '<div id= "tweet_text">' + doc.tweetText + '</div>';
   //}
-  var output = '<div id="tweet"><h2>' + '<a href="http://www.twitter.com/@' + doc.screenName + '" target="_blank">' + doc.screenName + '</a></h2><p>' + doc.tweetRetweetedCount + '</p><img src="images/retweet.svg" id="retweetIcon"/> <p> 0 </p> <img src="images/star.png" id="favIcon"/> <p>' + doc.followerCount + '</p><img src="images/follower.png" id="followerIcon"/>';
+  var output = '<div id="tweet"><h2>' + '<a href="http://www.twitter.com/@' + doc.screenName + '" target="_blank">' + doc.screenName + '</a></h2><p>' + doc.tweetRetweetedCount + '</p><img src="images/retweet.svg" id="retweetIcon"/> <p>'+doc.favoritesCount+'</p> <img src="images/star.png" id="favIcon"/> <p>' + doc.followerCount + '</p><img src="images/follower.png" id="followerIcon"/>';
   output += '<p id="links_' + doc.id + '" class="links"></p>';
   output += '<p>' + snippet + '</p></div>';
   return output;
@@ -115,7 +116,7 @@ function atify(text){
   var atRegex = /(@[^\s]+)/g;
   return text.replace(atRegex, function(url) {
     urlCopy = url;
-    createTag(url);
+    createAtTag(url);
       return '<a href="http://www.twitter.com/' + urlCopy.replace(/:$/, "") + '" target="blank">' + url + '</a>'; //url.replace(/\W/, "")
   })
 }
@@ -124,7 +125,7 @@ function hashtagify(text){
   var hashtagRegex = /(#[^\s]+)/g;
   return text.replace(hashtagRegex, function(url) {
     urlCopy = url;
-    createTag(url);
+    createHashtagTag(url);
       return '<a href="http://www.twitter.com/' + urlCopy.replace(/:$/, "") + '" target="blank">' + url + '</a>';
   })
 }

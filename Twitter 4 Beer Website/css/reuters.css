@@ -90,13 +90,13 @@ background-color: rgb(27, 178, 233);
     float: right;
     display: inline;
     margin: 5px;
-    
+
 }
 
 #retweetIcon{
     float: right;
     width: 25px;
-    height: auto; 
+    height: auto;
     display: inline;
     margin-left: 30px;
 }
@@ -104,7 +104,7 @@ background-color: rgb(27, 178, 233);
 #favIcon{
     float: right;
     width: 25px;
-    height: auto;  
+    height: auto;
     display: inline;
     margin-left: 30px;
 }
@@ -114,7 +114,7 @@ background-color: rgb(27, 178, 233);
     width: 25px;
     height: auto;
     display: inline;
-    
+
 }
 
 #tweet{

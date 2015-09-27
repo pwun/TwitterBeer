@@ -16,8 +16,10 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
   /** @lends AjaxSolr.Manager.prototype */
   {
   executeRequest: function (servlet, string, handler, errorHandler) {
+    clearSections();
     var self = this,
         options = {dataType: 'json'};
+        //options.sort = "favoritesCount desc";
     string = string || this.store.string();
     console.log(string);
     handler = handler || function (data) {
@@ -30,6 +32,7 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
       options.url = this.proxyUrl;
       options.data = {query: string};
       options.type = 'POST';
+      //options.sort = "favoritesCount desc";
     }
     else {
       options.url = this.solrUrl + servlet + '?' + string + '&wt=json&json.wrf=?';
