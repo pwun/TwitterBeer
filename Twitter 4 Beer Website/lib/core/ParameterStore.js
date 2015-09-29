@@ -46,7 +46,7 @@ AjaxSolr.ParameterStore = AjaxSolr.Class.extend(
     AjaxSolr.extend(this, {
       exposed: [],
       // The Solr parameters.
-      params: {},
+      params: {/*sort: "tweetRetweetedCount desc"*/},
       // A reference to the parameter store's manager.
       manager: null
     }, attributes);

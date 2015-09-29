@@ -42,7 +42,7 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
 
   template: function (doc) {
   var snippet = '';
-  console.log("Create new Template");
+  //console.log("Create new Template");
   doc.tweetText = urlify(""+doc.tweetText);
   doc.tweetText = atify(""+doc.tweetText);
   doc.tweetText = hashtagify(""+doc.tweetText);
@@ -103,6 +103,13 @@ function formatDate(doc){
     (""+doc.createdAt).charAt(18);
   doc.createdAt = "" + newDate;
 }
+
+/*function markMatches(text, query){
+  if(""+text.match(new RegExp("^" + query + ":\d+$"))) {
+  // some code
+  console.log("Matches the complete Query" + text.match(new RegExp("^" + query + ":\d+$")));
+  }
+}*/
 
 //Links to Websites, @Persons and #Hashtags
 function urlify(text) {
