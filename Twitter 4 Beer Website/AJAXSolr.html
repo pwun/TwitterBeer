@@ -44,13 +44,13 @@
 <div id="menu">
         <ol class="topmenu">
             <a href="">Filter</a>
-    <ul>
-        <li class="submenu"><a href="">Top Treffer</a></li>
-    <li class="submenu"><a href="">Retweets</a></li>
-        <li class="submenu"><a href="">Datum</a></li>
+    <ul id="dropdown">
+        <li class="submenu" id="fav"><a href="#" onclick="markActive(1)">Favorites</a></li>
+        <li class="submenu" id="retweets"><a href="#" onclick="markActive(2)">Retweets</a></li>
+        <li class="submenu" id="date" onclick="markActive(3)"><a href="#">Datum</a></li>
     </ul>
-        </ol>   
-        
+        </ol>
+
     </div>
     <div id= "content">
       <div id= "navLeft">

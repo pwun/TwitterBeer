@@ -105,6 +105,13 @@ AjaxSolr.AbstractManager = AjaxSolr.Class.extend(
       servlet = this.servlet;
     }
 
+    this.store.get('sort').val(localStorage["sort"]);
+    /*if(selectSort()!= null){
+      this.store.get('sort').val(selectSort());
+    }
+    else{
+      this.store.get('sort').val("createdAt desc");
+    }*/
     this.store.save();
 
     for (var widgetId in this.widgets) {

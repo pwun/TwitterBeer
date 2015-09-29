@@ -38,7 +38,8 @@ var Manager;
               }
 document.getElementById("query").value = localStorage["input"];
       console.log(localStorage["input"]);
-      Manager.store.get('sort').val(selectSort());
+      Manager.store.get('sort').val(localStorage["sort"]);
+      //console.log(selectSort());
       //Manager.store.get('sort').val('followerCount desc');
       if(localStorage["input"]==""){
 
@@ -56,8 +57,90 @@ function clearLS(){
   localStorage["input"] = "";
 }
 
-function selectSort(){
-  var sort = '';
-  //var dropdown = document.getElementById("");
-  return sort;
+function markActive(pos){
+  switch (pos) {
+    case 1:
+      localStorage["sort"] = "favoritesCount desc";
+      console.log("Mark Fav Active");
+      break;
+    case 2:
+      localStorage["sort"] = "tweetRetweetedCount desc";
+      console.log("Mark Retweets Active");
+      break;
+    case 3:
+      localStorage["sort"] = "createdAt desc";
+      console.log("Mark Date Active");
+      break;
+
+    default:
+      console.log("Mark Nothing");
+  }
+  Manager.doRequest();
 }
+
+/*function markActive(pos){
+  switch (pos) {
+    case 1:
+      $("#fav").addClass('active');
+      if($("#retweets").hasClass('active')){
+        $("#retweets").removeClass('active');
+      }
+      if($("#date").hasClass('active')){
+        $("#date").removeClass('active');
+      }
+      console.log("Mark Fav Active");
+      break;
+      case 2:
+        $("#retweets").addClass('active');
+        if($("#fav").hasClass('active')){
+          $("#fav").removeClass('active');
+        }
+        if($("#date").hasClass('active')){
+          $("#date").removeClass('active');
+        }
+        console.log("Mark Retweets Active");
+        break;
+        case 3:
+          $("#date").addClass('active');
+          if($("#retweets").hasClass('active')){
+            $("#retweets").removeClass('active');
+          }
+          if($("#fav").hasClass('active')){
+            $("#fav").removeClass('active');
+          }
+          console.log("Mark Date Active");
+          break;
+
+    default:
+      $("#fav").addClass('active');
+      if($("#retweets").hasClass('active')){
+        $("#retweets").removeClass('active');
+      }
+      if($("#retweets").hasClass('active')){
+        $("#retweets").removeClass('active');
+      }
+      console.log("Mark Default Active");
+  }
+}*/
+
+/*function selectSort(){
+  var sort = '';
+  var dropdown = document.getElementById("dropdown");
+  sort = $('#dropdown').filter('.active').attr('id')+"";
+  /*switch (sort) {
+    case "Favorites":
+      sort = "favoritesCount desc";
+      break;
+    case "Retweets":
+      sort = "tweetRetweetedCount desc";
+      break;
+    case "Datum":
+      sort = "createdAt desc";
+      break;
+    default:
+    console.log("Default sort");
+      sort = "favoritesCount desc";
+  }
+  console.log("Sort By: " + sort);
+  return sort;
+}*/
