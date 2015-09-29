@@ -19,6 +19,10 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
 
     afterRequest: function () {
     $(this.target).empty();
+    /*for (j = 0; j < this.manager.response.response.docs.length; j++){
+      //hashtagify(this.manager.response.response.docs[i].tweetText);
+      console.log("TweetText: " + this.manager.response.response.docs[j].tweetText);
+    }*/
     for (var i = 0, l = this.manager.response.response.docs.length; i < l; i++) {
       var doc = this.manager.response.response.docs[i];
       $(this.target).append(this.template(doc));
@@ -134,6 +138,13 @@ function hashtagify(text){
     urlCopy = url;
     createHashtagTag(url);
       return '<a href="http://www.twitter.com/' + urlCopy.replace(/:$/, "") + '" target="blank">' + url + '</a>';
+  })
+}
+
+function findHashtags(text){
+  var hashtagRegex = /(#[^\s]+)/g;
+  text.select(hashtagRegex, function(url){
+    createHashtagTag(url);
   })
 }
 //Links END

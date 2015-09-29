@@ -106,12 +106,11 @@ AjaxSolr.AbstractManager = AjaxSolr.Class.extend(
     }
 
     this.store.get('sort').val(localStorage["sort"]);
-    /*if(selectSort()!= null){
-      this.store.get('sort').val(selectSort());
-    }
-    else{
-      this.store.get('sort').val("createdAt desc");
-    }*/
+/*
+    this.store.get('rows').val(10000);
+    this.store.get('fl').val("tweetText");
+*/
+
     this.store.save();
 
     for (var widgetId in this.widgets) {
@@ -147,6 +146,12 @@ AjaxSolr.AbstractManager = AjaxSolr.Class.extend(
    */
   handleResponse: function (data) {
     this.response = data;
+
+/*    console.log("handleResponse: finding Hashtags..." + data);
+    for(i = 0; i < data.length; i++){
+
+      findHashtags(data[i].tweetText);
+    }*/
 
     for (var widgetId in this.widgets) {
       this.widgets[widgetId].afterRequest();
