@@ -38,13 +38,15 @@ var Manager;
               }
 document.getElementById("query").value = localStorage["input"];
       console.log(localStorage["input"]);
+      Manager.store.get('sort').val(selectSort());
+      //Manager.store.get('sort').val('followerCount desc');
       if(localStorage["input"]==""){
+
           Manager.store.addByValue('q', '*:*');
       }
       else{
           Manager.store.addByValue('q', ""+localStorage["input"]);
       }
-
       Manager.doRequest();
 
   });
@@ -52,4 +54,10 @@ document.getElementById("query").value = localStorage["input"];
 
 function clearLS(){
   localStorage["input"] = "";
+}
+
+function selectSort(){
+  var sort = '';
+  //var dropdown = document.getElementById("");
+  return sort;
 }
