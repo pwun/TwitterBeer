@@ -40,7 +40,9 @@ http://localhost:8983/solr/TwitterBeer/select?q=*%3A*&sort=tweetRetweetedCount%2
       //options.sort = "tweetRetweetedCount desc";
     }
     else {
-      options.url = this.solrUrl + /*'sort="tweetRetweetedCount desc&"' +*/ servlet + '?' + string + '&wt=json&json.wrf=?';
+      options.url = this.solrUrl + /*'sort="tweetRetweetedCount desc&"' +*/ servlet + '?' + string + '&wt=json&defType=edismax&qf=text+screenName%5E5.0&json.wrf=?';
+
+      //&defType=edismax&qf=text+screenName%5E5.0&stopwords=true&lowercaseOperators=true
       //options.sort = "tweetRetweetedCount desc";
       //?q=*&sort=map(category,20,20,case,0),score desc
     }
