@@ -38,7 +38,8 @@ var Manager;
               }
 document.getElementById("query").value = localStorage["input"];
       console.log(localStorage["input"]);
-      Manager.store.get('sort').val(localStorage["sort"]);
+      //Manager.store.get('sort').val(localStorage["sort"]);
+
       //console.log(selectSort());
       //Manager.store.get('sort').val('followerCount desc');
       if(localStorage["input"]==""){
@@ -59,6 +60,10 @@ function clearLS(){
 
 function markActive(pos){
   switch (pos) {
+    case 0:
+      localStorage["sort"] = "";
+      console.log("Mark deleted");
+      break;
     case 1:
       localStorage["sort"] = "favoritesCount desc";
       console.log("Mark Fav Active");
@@ -73,6 +78,7 @@ function markActive(pos){
       break;
 
     default:
+      localStorage["sort"] = "";
       console.log("Mark Nothing");
   }
   Manager.doRequest();
