@@ -1,47 +1,13 @@
 (function ($) {
 AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
 
-    /*
-    facetLinks: function (facet_field, facet_values) {
-      var links = [];
-      if (facet_values) {
-        for (var i = 0, l = facet_values.length; i < l; i++) {
-          links.push(
-            $('<a href="#"></a>')
-            .text(facet_values[i])
-            //.click(this.facetHandler(facet_field, facet_values[i]))
-          );
-        }
-      }
-      return links;
-    },
-    */
-
     afterRequest: function () {
     $(this.target).empty();
-    /*for (j = 0; j < this.manager.response.response.docs.length; j++){
-      //hashtagify(this.manager.response.response.docs[i].tweetText);
-      console.log("TweetText: " + this.manager.response.response.docs[j].tweetText);
-    }*/
+
     for (var i = 0, l = this.manager.response.response.docs.length; i < l; i++) {
       var doc = this.manager.response.response.docs[i];
       $(this.target).append(this.template(doc));
-      /*
-      var items = [];
-      items = items.concat(this.facetLinks('topics', doc.topics));
-      console.log(items);
-      items = items.concat(this.facetLinks('organisations', doc.organisations));
-      console.log(items);
-      items = items.concat(this.facetLinks('exchanges', doc.exchanges));
-      console.log(items);
-      var $links = $('#links_' + doc.id);
-      $links.empty();
-      for (var j = 0, m = items.length; j < m; j++) {
-        $links.append($('<li></li>').append(items[j]));
-      }
-      */
     }
-    //checkEmptySelection();
   },
 
   template: function (doc) {
@@ -51,14 +17,8 @@ AjaxSolr.ResultWidget = AjaxSolr.AbstractWidget.extend({
   doc.tweetText = atify(""+doc.tweetText);
   doc.tweetText = hashtagify(""+doc.tweetText);
   formatDate(doc);
-  /*if (doc.tweetText.length > 300) {
-    snippet += doc.createdAt + ' ' + doc.tweetText.substring(0, 100);
-    snippet += '<span style="display:none;">' + doc.tweetText.substring(100);
-    snippet += '</span> <a href="#" class="more">more</a>';
-  }
-  else {*/
-    snippet += '<div id="tweet_date">' + doc.createdAt+'</div>' + '<br>' + '<div id= "tweet_text">' + doc.tweetText + '</div>';
-  //}
+
+  snippet += '<div id="tweet_date">' + doc.createdAt+'</div>' + '<br>' + '<div id= "tweet_text">' + doc.tweetText + '</div>';
   var output = '<div id="tweet"><h2>' + '<a href="http://www.twitter.com/@' + doc.screenName + '" target="_blank">' + doc.screenName + '</a></h2><p>' + doc.tweetRetweetedCount + '</p><img src="images/retweet.svg" id="retweetIcon"/> <p>'+doc.favoritesCount+'</p> <img src="images/star.png" id="favIcon"/> <p>' + doc.followerCount + '</p><img src="images/follower.png" id="followerIcon"/>';
   output += '<p id="links_' + doc.id + '" class="links"></p>';
   output += '<p>' + snippet + '</p></div>';
@@ -108,13 +68,6 @@ function formatDate(doc){
   doc.createdAt = "" + newDate;
 }
 
-/*function markMatches(text, query){
-  if(""+text.match(new RegExp("^" + query + ":\d+$"))) {
-  // some code
-  console.log("Matches the complete Query" + text.match(new RegExp("^" + query + ":\d+$")));
-  }
-}*/
-
 //Links to Websites, @Persons and #Hashtags
 function urlify(text) {
   var urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -128,7 +81,7 @@ function atify(text){
   return text.replace(atRegex, function(url) {
     urlCopy = url;
     createAtTag(url);
-      return '<a href="http://www.twitter.com/' + urlCopy.replace(/:$/, "") + '" target="blank">' + url + '</a>'; //url.replace(/\W/, "")
+      return '<a href="http://www.twitter.com/' + urlCopy.replace(/:$/, "") + '" target="blank">' + url + '</a>';
   })
 }
 

@@ -12,8 +12,5 @@
 		    }
 		  });
 		},
-	//afterRequest: function () {
-	//	  $(this.target).find('input').val('');
-	//	},
 	});
 })(jQuery);

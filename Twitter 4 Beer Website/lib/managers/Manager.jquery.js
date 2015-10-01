@@ -18,14 +18,9 @@ AjaxSolr.Manager = AjaxSolr.AbstractManager.extend(
   executeRequest: function (servlet, string, handler, errorHandler) {
     clearSections();
     var self = this,
-        options = {dataType: 'json'/*, sort: 'tweetRetweetedCount desc'*/};
-        //options.sort = "tweetRetweetedCount desc";
+        options = {dataType: 'json'};
     string = string || this.store.string();
 
-    /*
-    string += "&sort=tweetRetweetedCount desc";
-http://localhost:8983/solr/TwitterBeer/select?q=*%3A*&sort=tweetRetweetedCount%20desc&wt=json&json.wrf=jQuery172002101860917173326_1443449392548&_=1443449392641
-    */
     console.log(string);
     handler = handler || function (data) {
       self.handleResponse(data);
@@ -37,14 +32,9 @@ http://localhost:8983/solr/TwitterBeer/select?q=*%3A*&sort=tweetRetweetedCount%2
       options.url = this.proxyUrl;
       options.data = {query: string};
       options.type = 'POST';
-      //options.sort = "tweetRetweetedCount desc";
     }
     else {
-      options.url = this.solrUrl + /*'sort="tweetRetweetedCount desc&"' +*/ servlet + '?' + string + '&wt=json&defType=edismax&qf=text+screenName%5E5.0&json.wrf=?';
-
-      //&defType=edismax&qf=text+screenName%5E5.0&stopwords=true&lowercaseOperators=true
-      //options.sort = "tweetRetweetedCount desc";
-      //?q=*&sort=map(category,20,20,case,0),score desc
+      options.url = this.solrUrl +  servlet + '?' + string + '&wt=json&defType=edismax&qf=text+screenName%5E5.0&json.wrf=?';
     }
     jQuery.ajax(options).done(handler).fail(errorHandler);
   }
