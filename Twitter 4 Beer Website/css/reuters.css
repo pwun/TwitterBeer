@@ -45,7 +45,7 @@ a:hover {
 /* header */
 #menu {
   font-size:12px;
-  position:absolute; 
+  position:absolute;
     z-index: 1000;
     margin-left: 74.5%;
     margin-top: 1.5%;
@@ -80,7 +80,7 @@ a:hover {
   /*color:rgb(27, 178, 233);*/
   font-weight:bold;
   text-decoration:none;
-  margin:0; 
+  margin:0;
   width: 90px;
   height: 15px;
   text-align: center;
@@ -102,7 +102,7 @@ a:hover {
 }
 
 .topmenu:hover ul {
-  display:inline;  
+  display:inline;
   z-index:500;
 }
 
@@ -110,6 +110,10 @@ a:hover {
   margin-top: 10px;
   float: right;
   height: 80px;
+}
+
+#navRight li{
+  list-style: none;
 }
 
 #header {
@@ -281,6 +285,11 @@ a:hover{
 }
 
 #navLeft p {
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+#navRight p {
   padding-top: 5px;
   padding-left: 5px;
 }
