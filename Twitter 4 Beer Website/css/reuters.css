@@ -64,6 +64,7 @@ a:hover {
 }
 
 .topmenu a {
+  position: fixed;
   float:left;
   background-color:black;
   color: white;
