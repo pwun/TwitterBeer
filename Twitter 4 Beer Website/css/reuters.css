@@ -4,7 +4,7 @@
 }
 
 html{
-  background-color: rgb(242, 242, 242);
+  background-color: rgb(22, 142, 186);
 
 }
 
@@ -14,6 +14,7 @@ body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 12px;
   line-height: 18px;
+
 }
 
 img {
@@ -48,7 +49,7 @@ a:hover {
   position:absolute;
     z-index: 1000;
     margin-left: 74.5%;
-    margin-top: 1.5%;
+    margin-top: 2%;
     text-decoration: none;
 }
 
@@ -66,24 +67,27 @@ a:hover {
 .topmenu a {
   position: fixed;
   float:left;
-  background-color:black;
+  background-color:white;
+  opacity: 0.85;
   color: white;
+  color: rgb(255, 210, 0);
 }
 .topmenu ul{
   display:none;
 }
 
 .topmenu a, .submenu a{
-  padding:1px 5px;
-  border:1px solid black;
+  /*padding:1px 5px;*/
+  border:1px solid rgb(242,242,242);
   border-radius: 7px;
   border-collapse:inherit;
   /*color:rgb(27, 178, 233);*/
   font-weight:bold;
   text-decoration:none;
   margin:0;
-  width: 90px;
+  width: 70px;
   height: 15px;
+  padding: 10px;
   text-align: center;
   vertical-align: middle;
   font-size: 12px;
@@ -94,7 +98,9 @@ a:hover {
   font-size:12px;
   position:relative;
   clear:both; /* special IE6 */
-  background-color: silver;
+  /*background-color: silver;*/
+  background-color: white;
+  opacity: 1;
 }
 
 #menu a:hover, .topmenu.on a {
@@ -114,13 +120,47 @@ a:hover {
 }
 
 #navRight li{
+  padding-bottom: 10px;
   list-style: none;
 }
 
+#navLeft{
+  font-size: 15px;
+}
+
+#navRight{
+  font-size: 15px;
+}
+
+
+#navLeft li{
+  padding-bottom: 10px;
+  list-style: none;
+}
+
+/*#seperatorLeft{
+  margin-left: 20%;
+  position: absolute;
+  float: left;
+  height: 10000px;
+  width: 2px;
+  background-color: rgb(242, 242, 242);
+}
+
+#seperatorRight{
+  margin-left: 80%;
+  position: absolute;
+  float: right;
+  height: 10000px;
+  width: 2px;
+  background-color: rgb(242, 242, 242);
+}
+*/
 #header {
   position: fixed;
 
-  height: 100px;
+  height: 110px;
+  border-bottom: 2px solid rgb(242,242,242);
   width: 100%;
 background-color: rgb(27, 178, 233);
   z-index: 100;
@@ -185,7 +225,7 @@ background-color: rgb(27, 178, 233);
 }
 
 #tweet{
-    background-color: white;
+    background-color: rgb(255,255,255);
     opacity: 0.85;
     margin: 20px;
     padding-left: 10px;
@@ -207,7 +247,7 @@ background-color: rgb(27, 178, 233);
 }
 
 #tweet_text{
-
+  opacity: 1;
 }
 
 #tweet_date{
@@ -263,26 +303,33 @@ a:hover{
 #content {
   width: 100%;
   margin: 0px auto;
-  padding-top: 100px;
+  padding-top: 120px;
 }
 
 #navRight{
   position: fixed;
-  margin-left: 80%;
-  width: 20%;
+  margin-left: 81%;
+  width: 18%;
   height: 1000px;
-  background-color: rgb(242, 242, 242);
-  border-left: 3px solid rgb(27, 178, 233);
   float: right;
 }
 
 #navLeft{
   position: fixed;
-  width: 20%;
+  margin-left: 1%;
+  width: 18%;
   height: 1000px;
-  background-color: rgb(242, 242, 242);
-  border-right: 3px solid rgb(27, 178, 233);
   float: left;
+}
+
+.sidebar{
+  background-color: white;
+  opacity: 0.85;
+  border-radius: 5px;
+}
+
+.sidebar p {
+  margin-bottom: 10px;
 }
 
 #navLeft p {
@@ -304,10 +351,11 @@ a:hover{
 
 #result {
   margin-left: 20%;
-  background-color: rgb(242, 242, 242);
   float: left;
   width: 60%;
   text-align: justify;
+  border-left: 2px solid rgb(242, 242, 242);
+  border-right: 2px solid rgb(242, 242, 242);
 
 }
 
